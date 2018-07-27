@@ -10,8 +10,20 @@ namespace AspNetCoreIdentityServer
         {
             return new List<Client>
             {
+                
+                new Client
+                {
+                    ClientId = "client",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
 
-            };
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = { "api1" }
+                }
+           
+           };
         }
 
         public static IEnumerable<ApiResource> GetApiResources()
