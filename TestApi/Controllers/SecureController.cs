@@ -13,6 +13,7 @@ namespace TestApi.Controllers
     [Authorize]
     public class SecureController : Controller
     {
+        
         // GET: api/<controller>
         [HttpGet]
         public IActionResult Get()
