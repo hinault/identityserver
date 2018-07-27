@@ -30,7 +30,7 @@ namespace AspNetCoreIdentityServer
         {
             return new List<ApiResource>
             {
-                
+                new ApiResource("testapi", "My Test API")
             };
         }
     }
