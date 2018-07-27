@@ -15,6 +15,8 @@ namespace AspNetCoreIdentityServer
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //configure identity server with in-memory stores, keys, clients and resources
             services.AddIdentityServer()
                    .AddDeveloperSigningCredential()
                     .AddInMemoryApiResources(Config.GetApiResources())
