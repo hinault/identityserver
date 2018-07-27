@@ -20,7 +20,7 @@ namespace AspNetCoreIdentityServer
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "testapi" }
                 }
            
            };
