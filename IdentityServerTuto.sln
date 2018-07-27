@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreIdentityServer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApi", "TestApi\TestApi.csproj", "{537331B3-7218-42F7-9761-8CC363FBDF1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppClient", "ConsoleAppClient\ConsoleAppClient.csproj", "{2E3C77BF-C9E8-401E-8EC1-38803C42290B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{537331B3-7218-42F7-9761-8CC363FBDF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{537331B3-7218-42F7-9761-8CC363FBDF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{537331B3-7218-42F7-9761-8CC363FBDF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E3C77BF-C9E8-401E-8EC1-38803C42290B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E3C77BF-C9E8-401E-8EC1-38803C42290B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E3C77BF-C9E8-401E-8EC1-38803C42290B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E3C77BF-C9E8-401E-8EC1-38803C42290B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
