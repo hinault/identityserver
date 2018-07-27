@@ -13,7 +13,7 @@ namespace AspNetCoreIdentityServer
                 
                 new Client
                 {
-                    ClientId = "client",
+                    ClientId = "consoleappclient",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
 
                     ClientSecrets =
