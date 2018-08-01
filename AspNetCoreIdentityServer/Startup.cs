@@ -23,7 +23,8 @@ namespace AspNetCoreIdentityServer
                    .AddDeveloperSigningCredential()
                    .AddInMemoryIdentityResources(Config.GetIdentityResources())
                     .AddInMemoryApiResources(Config.GetApiResources())
-                   .AddInMemoryClients(Config.GetClients());
+                   .AddInMemoryClients(Config.GetClients())
+                   .AddTestUsers(Config.GetUsers()); ;
              
         }
 
