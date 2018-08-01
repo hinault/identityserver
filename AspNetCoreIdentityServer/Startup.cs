@@ -21,6 +21,7 @@ namespace AspNetCoreIdentityServer
             //configure identity server with in-memory stores, keys, clients and resources
             services.AddIdentityServer()
                    .AddDeveloperSigningCredential()
+                   .AddInMemoryIdentityResources(Config.GetIdentityResources())
                     .AddInMemoryApiResources(Config.GetApiResources())
                    .AddInMemoryClients(Config.GetClients());
              
