@@ -10,7 +10,7 @@ namespace AspNetCoreIdentityServer
         {
             return new List<Client>
             {
-                
+
                 new Client
                 {
                     ClientId = "consoleappclient",
@@ -22,7 +22,7 @@ namespace AspNetCoreIdentityServer
                     },
                     AllowedScopes = { "testapi" }
                 }
-           
+
            };
         }
 
@@ -33,5 +33,15 @@ namespace AspNetCoreIdentityServer
                 new ApiResource("testapi", "My Test API")
             };
         }
+
+        public static IEnumerable<IdentityResource> GetIdentityResources()
+        {
+            return new List<IdentityResource>
+         {
+        new IdentityResources.OpenId(),
+        new IdentityResources.Profile(),
+            };
+        }
+
     }
 }
