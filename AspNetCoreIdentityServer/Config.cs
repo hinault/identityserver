@@ -1,4 +1,5 @@
 ﻿using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
 using System.Collections.Generic;
@@ -24,9 +25,29 @@ namespace AspNetCoreIdentityServer
                         new Secret("secret".Sha256())
                     },
                     AllowedScopes = { "testapi" }
+                },
+
+                 // OpenID Connect implicit flow client (MVC)
+                new Client
+                {
+                    ClientId = "mvcappclient",
+                    ClientName = "MVC Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RequireConsent = false,
+                    RedirectUris = { "https://localhost:5005/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:5005/signout-callback-oidc" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile
+                    }
                 }
 
-           };
+           }
+            
+            
+            ;
         }
 
         public static IEnumerable<ApiResource> GetApiResources()
