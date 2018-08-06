@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using MvcAppClient.Models;
 
@@ -36,6 +37,14 @@ namespace MvcAppClient.Controllers
             ViewData["Message"] = "Secure page.";
 
             return View();
+        }
+
+        public async Task Logout()
+        {
+            await HttpContext.SignOutAsync("Cookies");
+            await HttpContext.SignOutAsync("oidc");
+
+           // return Redirect("https://localhost:5001/account/logout");
         }
 
         public IActionResult Privacy()
