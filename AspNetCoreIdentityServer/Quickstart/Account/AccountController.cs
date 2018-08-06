@@ -218,8 +218,8 @@ namespace IdentityServer4.Quickstart.UI
                 return SignOut(new AuthenticationProperties { RedirectUri = url }, vm.ExternalAuthenticationScheme);
             }
 
-            if (vm.AutomaticRedirectAfterSignOut)
-                return Redirect(vm.PostLogoutRedirectUri);
+            //if (vm.AutomaticRedirectAfterSignOut)
+            //    return Redirect(vm.PostLogoutRedirectUri);
 
             return View("LoggedOut", vm);
         }

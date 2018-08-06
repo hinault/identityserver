@@ -19,7 +19,7 @@ namespace AspNetCoreIdentityServer
                 {
                     ClientId = "consoleappclient",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-
+                    
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
@@ -36,6 +36,7 @@ namespace AspNetCoreIdentityServer
                     RequireConsent = false,
                     RedirectUris = { "https://localhost:5005/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:5005/signout-callback-oidc" },
+                    
 
                     AllowedScopes =
                     {

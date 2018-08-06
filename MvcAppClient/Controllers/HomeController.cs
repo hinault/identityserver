@@ -43,8 +43,6 @@ namespace MvcAppClient.Controllers
         {
             await HttpContext.SignOutAsync("Cookies");
             await HttpContext.SignOutAsync("oidc");
-
-           // return Redirect("https://localhost:5001/account/logout");
         }
 
         public IActionResult Privacy()
