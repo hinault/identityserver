@@ -51,7 +51,13 @@ namespace MvcAppClient
                     options.RequireHttpsMetadata = false;
 
                     options.ClientId = "mvcappclient";
+                    options.ClientSecret = "secret";
+                    options.ResponseType = "code id_token";
                     options.SaveTokens = true;
+                    options.GetClaimsFromUserInfoEndpoint = true;
+
+                    options.Scope.Add("testapi");
+                    options.Scope.Add("offline_access");
                 });
 
         }

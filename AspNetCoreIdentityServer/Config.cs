@@ -32,7 +32,11 @@ namespace AspNetCoreIdentityServer
                 {
                     ClientId = "mvcappclient",
                     ClientName = "MVC Client",
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    ClientSecrets =
+                    {
+                       new Secret("secret".Sha256())
+                     },
                     RequireConsent = false,
                     RedirectUris = { "https://localhost:5005/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:5005/signout-callback-oidc" },
@@ -41,8 +45,11 @@ namespace AspNetCoreIdentityServer
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile
-                    }
+                        IdentityServerConstants.StandardScopes.Profile,
+                         "testapi"
+                    },
+
+                      AllowOfflineAccess = true
                 }
 
            }
