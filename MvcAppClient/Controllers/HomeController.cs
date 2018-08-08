@@ -63,6 +63,7 @@ namespace MvcAppClient.Controllers
         public async Task<IActionResult> CallApiUsingClientCredentials()
         {
             var tokenClient = new TokenClient("https://localhost:5001/connect/token", "mvcappclient", "secret");
+
             var tokenResponse = await tokenClient.RequestClientCredentialsAsync("testapi");
 
             var client = new HttpClient();
