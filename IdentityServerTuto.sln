@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcAppClient", "MvcAppClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreIdentityServer", "AspNetCoreIdentityServer\AspNetCoreIdentityServer.csproj", "{163E2E00-4B42-476A-87DA-AF4C012F505B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdServer", "..\IdServer\IdServer.csproj", "{B908D344-1119-4C91-BE0C-8BE0585DF47B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{163E2E00-4B42-476A-87DA-AF4C012F505B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{163E2E00-4B42-476A-87DA-AF4C012F505B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{163E2E00-4B42-476A-87DA-AF4C012F505B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B908D344-1119-4C91-BE0C-8BE0585DF47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B908D344-1119-4C91-BE0C-8BE0585DF47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B908D344-1119-4C91-BE0C-8BE0585DF47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B908D344-1119-4C91-BE0C-8BE0585DF47B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
