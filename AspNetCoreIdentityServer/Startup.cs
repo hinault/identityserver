@@ -38,14 +38,17 @@ namespace AspNetCoreIdentityServer
                 app.UseDeveloperExceptionPage();
             }
 
+
+            app.UseStaticFiles();
             app.UseRouting();
 
+            app.UseIdentityServer();
+
+
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
