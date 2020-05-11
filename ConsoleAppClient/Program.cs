@@ -13,8 +13,9 @@ namespace ConsoleAppClient
         static async Task CallWebApi()
 
         {
+            var client = new HttpClient();
             // discover endpoints from metadata
-            var disco = await DiscoveryClient.GetAsync("https://localhost:5001");
+            var disco = await client.GetDiscoveryDocumentAsync("https://localhost:5001");
             if (disco.IsError)
             {
                 Console.WriteLine(disco.Error);
@@ -22,8 +23,14 @@ namespace ConsoleAppClient
             }
 
             // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "consoleappclient", "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("testapi");
+            var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            {
+                Address = disco.TokenEndpoint,
+
+                ClientId = "consoleappclient",
+                ClientSecret = "secret",
+                Scope = "testapi"
+            });
 
             if (tokenResponse.IsError)
             {
@@ -34,10 +41,10 @@ namespace ConsoleAppClient
             Console.WriteLine(tokenResponse.Json);
 
             // call api
-            var client = new HttpClient();
-            client.SetBearerToken(tokenResponse.AccessToken);
+            var apiclient = new HttpClient();
+            apiclient.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await client.GetAsync("https://localhost:5003/api/secure");
+            var response = await apiclient.GetAsync("https://localhost:5003/secure");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);

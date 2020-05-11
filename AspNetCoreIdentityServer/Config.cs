@@ -16,6 +16,22 @@ namespace AspNetCoreIdentityServer
             {
 
                 new Client
+        {
+            ClientId = "client",
+
+            // no interactive user, use the clientid/secret for authentication
+            AllowedGrantTypes = GrantTypes.ClientCredentials,
+
+            // secret for authentication
+            ClientSecrets =
+            {
+                new Secret("secret".Sha256())
+            },
+
+            // scopes that client has access to
+            AllowedScopes = { "api1" }
+        },
+                new Client
                 {
                     ClientId = "consoleappclient",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
@@ -26,6 +42,8 @@ namespace AspNetCoreIdentityServer
                     },
                     AllowedScopes = { "testapi" }
                 },
+
+
 
                  // OpenID Connect implicit flow client (MVC)
                 new Client

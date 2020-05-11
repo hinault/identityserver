@@ -9,9 +9,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TestApi.Controllers
 {
-    [Route("api/[controller]")]
+    
+    [Route("[controller]")]
     [Authorize]
-    public class SecureController : Controller
+    public class SecureController : ControllerBase
     {
         
         // GET: api/<controller>
