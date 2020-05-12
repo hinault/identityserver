@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppClient", "Console
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApi", "TestApi\TestApi.csproj", "{16780CD1-D315-4F6B-8464-7B013E818AEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcAppClient", "MvcAppClient\MvcAppClient.csproj", "{D1721385-3665-4984-BDC5-8F3261D8ACFA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcAppClient1", "MvcAppClient1\MvcAppClient1.csproj", "{323EFCBE-0842-41A9-9D3E-29BDFD37BB23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcAppClient", "MvcAppClient\MvcAppClient.csproj", "{D1721385-3665-4984-BDC5-8F3261D8ACFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{D1721385-3665-4984-BDC5-8F3261D8ACFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1721385-3665-4984-BDC5-8F3261D8ACFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1721385-3665-4984-BDC5-8F3261D8ACFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{323EFCBE-0842-41A9-9D3E-29BDFD37BB23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{323EFCBE-0842-41A9-9D3E-29BDFD37BB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{323EFCBE-0842-41A9-9D3E-29BDFD37BB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{323EFCBE-0842-41A9-9D3E-29BDFD37BB23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

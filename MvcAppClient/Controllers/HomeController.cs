@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using IdentityModel.Client;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MvcAppClient.Models;
+using Newtonsoft.Json.Linq;
 
 namespace MvcAppClient.Controllers
 {
@@ -22,6 +27,36 @@ namespace MvcAppClient.Controllers
         {
             return View();
         }
+
+
+
+        [Authorize]
+        public IActionResult Secure()
+        {
+            ViewData["Message"] = "Secure page.";
+
+            return View();
+        }
+
+        public async Task Logout()
+        {
+            await HttpContext.SignOutAsync("Cookies");
+            await HttpContext.SignOutAsync("oidc");
+        }
+
+        public async Task<IActionResult> CallApiUsingUserAccessToken()
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+            var client = new HttpClient();
+            client.SetBearerToken(accessToken);
+            var content = await client.GetStringAsync("https://localhost:5003/secure");
+
+            ViewBag.Json = JArray.Parse(content).ToString();
+            return View();
+        }
+
+        
 
         public IActionResult Privacy()
         {

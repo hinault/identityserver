@@ -15,22 +15,7 @@ namespace AspNetCoreIdentityServer
             return new List<Client>
             {
 
-                new Client
-        {
-            ClientId = "client",
-
-            // no interactive user, use the clientid/secret for authentication
-            AllowedGrantTypes = GrantTypes.ClientCredentials,
-
-            // secret for authentication
-            ClientSecrets =
-            {
-                new Secret("secret".Sha256())
-            },
-
-            // scopes that client has access to
-            AllowedScopes = { "api1" }
-        },
+                
                 new Client
                 {
                     ClientId = "consoleappclient",
@@ -50,12 +35,13 @@ namespace AspNetCoreIdentityServer
                 {
                     ClientId = "mvcappclient",
                     ClientName = "MVC Client",
-                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    AllowedGrantTypes = GrantTypes.Code,
                     ClientSecrets =
                     {
                        new Secret("secret".Sha256())
                      },
                     RequireConsent = false,
+                    RequirePkce = true,
                     RedirectUris = { "https://localhost:5005/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:5005/signout-callback-oidc" },
                     
